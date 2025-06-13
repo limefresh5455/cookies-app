@@ -4,7 +4,7 @@ generator client {
 
 datasource db {
   provider = "postgresql"
-  url      = "postgresql://postgres:admin@localhost:5000/cookiesapp?schema=public"
+  url      = "postgresql://cookiesapp:QHDJlQ92MYaHuEeT01jsf2BmQc7ylPEJ@dpg-d16244ogjchc739s0sag-a/cookiesapp"
 }
 
 model Session {
