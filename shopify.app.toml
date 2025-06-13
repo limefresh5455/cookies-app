@@ -1,0 +1,32 @@
+# Learn more about configuring your app at https://shopify.dev/docs/apps/tools/cli/configuration
+
+client_id = "8254ef8936a3b35f3ee42bbd02857029"
+name = "Cookies App"
+handle = "cookies-app-3"
+application_url = "https://translation-miles-picks-sports.trycloudflare.com"
+embedded = true
+
+[build]
+include_config_on_deploy = true
+automatically_update_urls_on_dev = true
+
+[webhooks]
+api_version = "2025-04"
+
+  [[webhooks.subscriptions]]
+  topics = [ "app/uninstalled" ]
+  uri = "/webhooks/app/uninstalled"
+
+  [[webhooks.subscriptions]]
+  topics = [ "app/scopes_update" ]
+  uri = "/webhooks/app/scopes_update"
+
+[access_scopes]
+# Learn more at https://shopify.dev/docs/apps/tools/cli/configuration#access_scopes
+scopes = "write_products, read_shop"
+
+[auth]
+redirect_urls = ["https://translation-miles-picks-sports.trycloudflare.com/auth/callback", "https://translation-miles-picks-sports.trycloudflare.com/auth/shopify/callback", "https://translation-miles-picks-sports.trycloudflare.com/api/auth/callback"]
+
+[pos]
+embedded = false
