@@ -23,7 +23,7 @@ api_version = "2025-04"
 
 [access_scopes]
 # Learn more at https://shopify.dev/docs/apps/tools/cli/configuration#access_scopes
-scopes = "write_products, read_shop"
+scopes = "write_products, read_shop, read_shopify_email, read_content, read_customers"
 
 [auth]
 redirect_urls = ["https://translation-miles-picks-sports.trycloudflare.com/auth/callback", "https://translation-miles-picks-sports.trycloudflare.com/auth/shopify/callback", "https://translation-miles-picks-sports.trycloudflare.com/api/auth/callback"]
