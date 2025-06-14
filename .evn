@@ -1,1 +1,1 @@
-SCOPES=read_content,read_customers
+SCOPES=read_content,read_customers,read_shopify_email
