@@ -119,6 +119,7 @@ export default function Index() {
                 <BlockStack gap="200">
                   <Text as="h2" variant="headingMd">
                     Congrats on creating a new Shopify app 🎉
+                    {routed}
                   </Text>
                   <Text variant="bodyMd" as="p">
                     This embedded app template uses{" "}
