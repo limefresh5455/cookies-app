@@ -106,7 +106,7 @@ export default function Index() {
 
   return (
     <Page>
-      <TitleBar title="Remix app template">
+      <TitleBar title="Cookies App">
         <button variant="primary" onClick={generateProduct}>
           Generate a product
         </button>
@@ -119,6 +119,7 @@ export default function Index() {
                 <BlockStack gap="200">
                   <Text as="h2" variant="headingMd">
                     Congrats on creating a new Shopify app 🎉
+                    {routed}
                   </Text>
                   <Text variant="bodyMd" as="p">
                     This embedded app template uses{" "}
