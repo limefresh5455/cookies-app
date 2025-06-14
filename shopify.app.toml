@@ -3,7 +3,7 @@
 client_id = "8254ef8936a3b35f3ee42bbd02857029"
 name = "Cookies App"
 handle = "cookies-app-3"
-application_url = "https://translation-miles-picks-sports.trycloudflare.com"
+application_url = "https://cookies-app.onrender.com/"
 embedded = true
 
 [build]
@@ -26,7 +26,7 @@ api_version = "2025-04"
 scopes = "write_products, read_shop, read_shopify_email, read_content, read_customers, read_merchant_managed_fulfillment_orders,read_orders"
 
 [auth]
-redirect_urls = ["https://translation-miles-picks-sports.trycloudflare.com/auth/callback", "https://translation-miles-picks-sports.trycloudflare.com/auth/shopify/callback", "https://translation-miles-picks-sports.trycloudflare.com/api/auth/callback"]
+redirect_urls = ["https://cookies-app.onrender.com/auth/callback", "https://cookies-app.onrender.com/auth/shopify/callback", "https://cookies-app.onrender.com/api/auth/callback"]
 
 [pos]
 embedded = false
