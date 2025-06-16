@@ -3,7 +3,7 @@
 client_id = "8254ef8936a3b35f3ee42bbd02857029"
 name = "Cookies App"
 handle = "cookies-app-3"
-application_url = "https://translation-miles-picks-sports.trycloudflare.com"
+application_url = "https://stranger-negotiations-relating-webcams.trycloudflare.com"
 embedded = true
 
 [build]
@@ -26,7 +26,7 @@ api_version = "2025-04"
 scopes = "write_products, read_shop"
 
 [auth]
-redirect_urls = ["https://translation-miles-picks-sports.trycloudflare.com/auth/callback", "https://translation-miles-picks-sports.trycloudflare.com/auth/shopify/callback", "https://translation-miles-picks-sports.trycloudflare.com/api/auth/callback"]
+redirect_urls = ["https://stranger-negotiations-relating-webcams.trycloudflare.com/auth/callback", "https://stranger-negotiations-relating-webcams.trycloudflare.com/auth/shopify/callback", "https://stranger-negotiations-relating-webcams.trycloudflare.com/api/auth/callback"]
 
 [pos]
 embedded = false

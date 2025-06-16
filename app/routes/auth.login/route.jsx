@@ -13,11 +13,20 @@ import polarisTranslations from "@shopify/polaris/locales/en.json";
 import polarisStyles from "@shopify/polaris/build/esm/styles.css?url";
 import { login } from "../../shopify.server";
 import { loginErrorMessage } from "./error.server";
+import { getAuth } from "@clerk/remix/ssr.server";
+import { redirect } from "@remix-run/node";
+
 
 export const links = () => [{ rel: "stylesheet", href: polarisStyles }];
 
-export const loader = async ({ request }) => {
-  const errors = loginErrorMessage(await login(request));
+export const loader = async (args) => {
+  const { userId } = await getAuth(args);
+  if (!userId) {
+    return redirect("/sign-in");
+  }
+
+
+  const errors = loginErrorMessage(await login(args.request));
 
   return { errors, polarisTranslations };
 };

@@ -2,9 +2,21 @@ import { redirect } from "@remix-run/node";
 import { Form, useLoaderData } from "@remix-run/react";
 import { login } from "../../shopify.server";
 import styles from "./styles.module.css";
+import { getAuth } from "@clerk/remix/ssr.server";
+import { authenticate } from "../../shopify.server";
+import { UserButton } from "@clerk/remix";
 
-export const loader = async ({ request }) => {
-  const url = new URL(request.url);
+export const loader = async (args) => {
+  const { userId } = await getAuth(args);
+
+  const isAdmin = await authenticate.admin(args.request);
+
+  if (!userId && !isAdmin) {
+
+    return redirect("/sign-in");
+  }
+
+  const url = new URL(args.request.url);
 
   if (url.searchParams.get("shop")) {
     throw redirect(`/app?${url.searchParams.toString()}`);
@@ -17,12 +29,19 @@ export default function App() {
   const { showForm } = useLoaderData();
 
   return (
+
     <div className={styles.index}>
       <div className={styles.content}>
+        {/* Show Clerk user button if user is signed in */}
+        <div style={{ display: "flex", justifyContent: "flex-end", marginBottom: "1rem" }}>
+          <UserButton />
+        </div>
+
         <h1 className={styles.heading}>A short heading about [your app]</h1>
         <p className={styles.text}>
           A tagline about [your app] that describes your value proposition.
         </p>
+
         {showForm && (
           <Form className={styles.form} method="post" action="/auth/login">
             <label className={styles.label}>
@@ -35,6 +54,7 @@ export default function App() {
             </button>
           </Form>
         )}
+
         <ul className={styles.list}>
           <li>
             <strong>Product feature</strong>. Some detail about your feature and
@@ -51,5 +71,6 @@ export default function App() {
         </ul>
       </div>
     </div>
+
   );
 }
