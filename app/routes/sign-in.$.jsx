@@ -1,4 +1,4 @@
-import {  SignUp } from "@clerk/remix";
+import { SignIn } from "@clerk/remix";
 
 export default function SignInPage() {
   return (
@@ -11,7 +11,7 @@ export default function SignInPage() {
         minHeight: "100vh",
       }}
     >
-      <SignUp path="/sign-up" routing="path" />
+      <SignIn path="/sign-in" signUpUrl="/sign-up" routing="path" />
     </section>
   );
 }
