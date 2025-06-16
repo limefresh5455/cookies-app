@@ -12,6 +12,10 @@ if (
 
 /** @type {import('@remix-run/dev').AppConfig} */
 module.exports = {
+  serverBuildTarget: "node",
+  server: "./server.js",
+  assetsBuildDirectory: "public/build",
+  publicPath: "/build/",
   ignoredRouteFiles: ["**/.*"],
   appDirectory: "app",
   serverModuleFormat: "cjs",
